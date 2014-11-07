@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This Gem provides shared code for processors and the console app.
+
+### Logger
+
+Provides a second argument (a hash) to the log methods (debug, info, ...)
+
+''''
+logger = Eventhub::Components::Logger.new(some_other_logger, 'app_name' => 'my fancy app', 'env' => 'staging')
+logger.info("my message", :foo => 1, :bar => 2)
+''''
 
 ## Contributing
 
