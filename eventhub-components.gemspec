@@ -6,10 +6,10 @@ require 'eventhub/components/version'
 Gem::Specification.new do |spec|
   spec.name          = "eventhub-components"
   spec.version       = Eventhub::Components::VERSION
-  spec.authors       = ["Pascal Betz"]
+  spec.authors       = ["Novartis"]
   spec.email         = ["pascal.betz@simplificator.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Eventhub Components utilities}
+  spec.description   = %q{Eventhub Components utilities}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency 'rspec', "~> 3.1.0"
 end
