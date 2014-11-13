@@ -6,7 +6,6 @@ class EventHub::Components::ExceptionWriter
 
   def initialize(base = nil, max_files = MAX_EXCEPTIONS_FILES)
       base = base ||= Dir.pwd
-
       @folder = File.join(base, 'exceptions')
       @max_files = max_files
       FileUtils.makedirs(folder)

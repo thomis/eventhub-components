@@ -15,7 +15,12 @@ class EventHub::Components::MultiLogger < BasicObject
 
   def method_missing(method, *args, &block)
     devices.map do |target|
-      target.send(method, *args, &block)
+      begin
+        target.send(method, *args, &block)
+      rescue => e
+        ::STDERR.puts "WARNING: Could not call #{method} in #{target} with #{args} because of #{e.message}"
+        e
+      end
     end
   end
 end
