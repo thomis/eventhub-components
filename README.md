@@ -1,4 +1,4 @@
-# Eventhub::Components
+# EventHub::Components
 
 TODO: Write a gem description
 
@@ -20,14 +20,35 @@ Or install it yourself as:
 
 This Gem provides shared code for processors and the console app.
 
-### Logger
+### Logging
+
+#### StructuredDataLogger
 
 Provides a second argument (a hash) to the log methods (debug, info, ...)
 
-''''
-logger = Eventhub::Components::Logger.new(some_other_logger, 'app_name' => 'my fancy app', 'env' => 'staging')
-logger.info("my message", :foo => 1, :bar => 2)
-''''
+    logger = EventHub::Components::StructuredDataLogger.new(some_other_logger, 'app_name' => 'my fancy app', 'env' => 'staging')
+    logger.info("my message", :foo => 1, :bar => 2)
+
+
+#### MultiLogger
+
+Forwards calls to all devices that have been added to the multilogger.
+
+    logger = EventHub::Components::MultiLogger.new
+    logger.add_device(some_other_logger_1)
+    logger.add_device(some_other_logger_2)
+    logger.info("Hans")
+
+#### ExceptionWriter
+
+Helps writing exceptions and log messages to files. It creates
+
+    writer = EventHub::Components::ExceptionWriter.new() # logs to ./exceptions
+    # or
+    writer = EventHub::Components::ExceptionWriter.new('some_dir', max_number_of_files) # logs to ./exceptions/some_dir
+
+    writer.write(e)
+
 
 ## Contributing
 

@@ -1,25 +1,25 @@
 require_relative '../spec_helper'
 
-RSpec.describe Eventhub::Components::Logger do
+RSpec.describe EventHub::Components::StructuredDataLogger do
   context 'initalize' do
     it 'no raise when all required arguments are given' do
       expect {
-        Eventhub::Components::Logger.new("something not nil", 'app_name' => 'an app', 'env' => 'test')
+        EventHub::Components::StructuredDataLogger.new("something not nil", 'app_name' => 'an app', 'env' => 'test')
       }.to_not raise_error
     end
     it 'requires app_name' do
       expect {
-        Eventhub::Components::Logger.new("something not nil", 'env' => 'test')
+        EventHub::Components::StructuredDataLogger.new("something not nil", 'env' => 'test')
       }.to raise_error(ArgumentError)
     end
     it 'requires app_name' do
       expect {
-        Eventhub::Components::Logger.new("something not nil", 'app_name' => 'an app')
+        EventHub::Components::StructuredDataLogger.new("something not nil", 'app_name' => 'an app')
       }.to raise_error(ArgumentError)
     end
 
     it 'adds the default options' do
-      logger = Eventhub::Components::Logger.new("something not nil", 'app_name' => 'an app', 'env' => 'test')
+      logger = EventHub::Components::StructuredDataLogger.new("something not nil", 'app_name' => 'an app', 'env' => 'test')
       expect(logger.options['pid']).to eq(::Process.pid)
       expect(logger.options['hostname']).to eq(::Socket.gethostname)
     end
@@ -30,15 +30,15 @@ RSpec.describe Eventhub::Components::Logger do
       # fake logger that stores a log message
       # in hash
       fake_logger = Hash.new
-      def l.debug(message); self[:debug] = message; end
-      def l.info(message); self[:info] = message; end
-      def l.warn(message); self[:warn] = message; end
-      def l.error(message); self[:error] = message; end
-      def l.fatal(message); self[:fatal] = message; end
+      def fake_logger.debug(message); self[:debug] = message; end
+      def fake_logger.info(message); self[:info] = message; end
+      def fake_logger.warn(message); self[:warn] = message; end
+      def fake_logger.error(message); self[:error] = message; end
+      def fake_logger.fatal(message); self[:fatal] = message; end
       fake_logger
     end
     subject {
-      Eventhub::Components::Logger.new(logger, 'app_name' => 'an app', 'env' => 'test')
+      EventHub::Components::StructuredDataLogger.new(logger, 'app_name' => 'an app', 'env' => 'test')
     }
 
     it 'forwards calls to the target when not related to log methods' do

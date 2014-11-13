@@ -3,7 +3,7 @@ require 'thread'
 
 # A wrapper for loggers to enrich the log message with structured data (a Hash).
 # All methods besides debug/info/warn/error/fatal are forwarded to the target by the means of method_missing.
-class Eventhub::Components::Logger < BasicObject
+class EventHub::Components::StructuredDataLogger < BasicObject
   SEVERITY_DEBUG = 7
   SEVERITY_INFO = 6
   SEVERITY_WARNING = 4

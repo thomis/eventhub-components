@@ -5,11 +5,11 @@ require 'eventhub/components/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "eventhub-components"
-  spec.version       = Eventhub::Components::VERSION
+  spec.version       = EventHub::Components::VERSION
   spec.authors       = ["Novartis"]
   spec.email         = ["pascal.betz@simplificator.com"]
-  spec.summary       = %q{Eventhub Components utilities}
-  spec.description   = %q{Eventhub Components utilities}
+  spec.summary       = %q{EventHub Components utilities}
+  spec.description   = %q{EventHub Components utilities}
   spec.homepage      = ""
   spec.license       = "MIT"
 
