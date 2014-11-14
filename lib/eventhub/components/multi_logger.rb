@@ -3,11 +3,13 @@ class EventHub::Components::MultiLogger < BasicObject
   attr_accessor :devices
 
   def initialize(folder=nil)
-      @devices = []
+    @devices = []
   end
 
   def add_device(device)
+    ::Kernel.raise ::ArgumentError.new("can not add nil device") if device.nil?
     @devices << device
+    self
   end
 
 

@@ -20,6 +20,20 @@ Or install it yourself as:
 
 This Gem provides shared code for processors and the console app.
 
+### Pid Files
+
+Takes care of writing, reading and deleting a PID file
+
+    pid_file = EventHub::Components::PidFile.new('my_application.pid')
+    pid_file.write # writes Process.pid
+    # or
+    pid_file.write(some_process_pid)
+
+    pid_file.read # => "some_pid" (it's a string as it comes from a file)
+
+    pid_file.delete
+
+
 ### Logging
 
 #### StructuredDataLogger
