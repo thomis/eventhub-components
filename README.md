@@ -18,6 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
+    require 'eventhub/components'
+
+## General
+
 This Gem provides shared code for processors and the console app.
 
 ### Pid Files
