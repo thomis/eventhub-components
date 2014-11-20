@@ -41,10 +41,6 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
       EventHub::Components::StructuredDataLogger.new(logger, 'app_name' => 'an app', 'env' => 'test')
     }
 
-    it 'forwards calls to the target when not related to log methods' do
-      expect(subject.class).to eq(logger.class)
-    end
-
     it 'enriches and forwards debug calls' do
       subject.debug("my message debug", {'some' => 'debug'})
       expectation = {'app_name' => 'an app', 'data' => {'some' => 'debug'}, 'env' => 'test', 'hostname' => Socket.gethostname, 'message' => 'my message debug', 'pid' => Process.pid, 'severity' => 7}

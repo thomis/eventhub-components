@@ -1,4 +1,4 @@
-class EventHub::Components::MultiLogger < BasicObject
+class EventHub::Components::MultiLogger
 
   attr_accessor :devices
 
@@ -7,7 +7,7 @@ class EventHub::Components::MultiLogger < BasicObject
   end
 
   def add_device(device)
-    ::Kernel.raise ::ArgumentError.new("can not add nil device") if device.nil?
+    raise ::ArgumentError.new("can not add nil device") if device.nil?
     @devices << device
     self
   end
