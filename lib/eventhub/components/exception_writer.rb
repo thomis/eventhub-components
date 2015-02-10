@@ -8,13 +8,15 @@ class EventHub::Components::ExceptionWriter
     base = base ||= Dir.pwd
     @folder = File.join(base, 'exceptions')
     @max_files = max_files
-    FileUtils.makedirs(folder)
   end
 
 
   def write(exception, message = nil)
     time = Time.now
     stamp = "#{time.strftime("%Y%m%d_%H%M%S")}_%i" % time.usec
+
+    # create exception folder when it's needed (but not before)
+    FileUtils.makedirs(@folder)
 
     write_exception("#{stamp}.log", exception)
     write_message("#{stamp}.msg.raw", message)
