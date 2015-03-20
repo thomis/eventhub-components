@@ -1,5 +1,5 @@
 module EventHub
   module Components
-    VERSION = '0.0.7'
+    VERSION = '0.0.14'
   end
 end
