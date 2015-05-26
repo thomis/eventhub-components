@@ -17,6 +17,6 @@ class EventHub::Components::Logger
         event["env"] = environment
       end
     end
-    LogStashLogger.new([{type: :udp, host: host, port: port}])
+    LogStashLogger.new([{type: :file, path: "log/#{processor_name}.log", sync: true}])
   end
 end
