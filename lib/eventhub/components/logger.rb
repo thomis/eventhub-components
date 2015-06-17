@@ -9,7 +9,7 @@ class EventHub::Components::Logger
     logger
   end
 
-  def self.logstash(processor_name, environment, host, port)
+  def self.logstash(processor_name, environment)
     #configure logstash with custom fields
     config = LogStashLogger.configure do |config|
       config.customize_event do |event|
@@ -17,6 +17,6 @@ class EventHub::Components::Logger
         event["env"] = environment
       end
     end
-    LogStashLogger.new([{type: :file, path: "logs/ruby/#{processor_name}.log"}])
+    LogStashLogger.new([{type: :file, path: "logs/ruby/#{processor_name}.log", sync: true}])
   end
 end
