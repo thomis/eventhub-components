@@ -1,6 +1,6 @@
 # EventHub::Components
 
-TODO: Write a gem description
+Gem to include logging, exception writing and pid file for event hub modules.
 
 ## Installation
 
