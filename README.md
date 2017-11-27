@@ -24,11 +24,7 @@ Or install it yourself as:
 
     require 'eventhub/components'
 
-## General
-
-This Gem provides shared code for processors and the console app.
-
-### Pid Files
+## Pid Files
 
 Takes care of writing, reading and deleting a PID file
 
@@ -42,7 +38,7 @@ Takes care of writing, reading and deleting a PID file
     pid_file.delete
 
 
-### Logging
+## Logging
 
 #### StructuredDataLogger
 
@@ -52,7 +48,7 @@ Provides a second argument (a hash) to the log methods (debug, info, ...)
     logger.info("my message", :foo => 1, :bar => 2)
 
 
-#### MultiLogger
+## MultiLogger
 
 Forwards calls to all devices that have been added to the multilogger.
 
@@ -61,7 +57,7 @@ Forwards calls to all devices that have been added to the multilogger.
     logger.add_device(some_other_logger_2)
     logger.info("Hans")
 
-#### ExceptionWriter
+## ExceptionWriter
 
 Helps writing exceptions and log messages to files. It creates
 
