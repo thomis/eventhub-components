@@ -1,6 +1,8 @@
+[![Dependency Status](https://gemnasium.com/badges/github.com/thomis/eventhub-components.svg)](https://gemnasium.com/github.com/thomis/eventhub-components)
+
 # EventHub::Components
 
-Gem to include logging, exception writing and pid file for event hub modules.
+Incldues logging, exception writing and pid file facilities for event hub processors.
 
 ## Installation
 
