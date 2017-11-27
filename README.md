@@ -1,4 +1,5 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/thomis/eventhub-components.svg)](https://gemnasium.com/github.com/thomis/eventhub-components)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3f6c9e1a8d32388df0fa/maintainability)](https://codeclimate.com/github/thomis/eventhub-components/maintainability)
 [![Build Status](https://travis-ci.org/thomis/eventhub-components.svg?branch=master)](https://travis-ci.org/thomis/eventhub-components)
 
 # EventHub::Components
