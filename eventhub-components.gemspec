@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["thomas.steiner@ikey.ch"]
   spec.summary = "Additional eventhub components"
   spec.description = "Additional eventhub components"
-  spec.homepage = ""
+  spec.homepage = "https://github.com/thomis/eventhub-components"
   spec.license = "MIT"
 
   spec.files = `git ls-files -z`.split("\x0")
