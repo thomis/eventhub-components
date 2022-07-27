@@ -1,6 +1,4 @@
-require 'socket'
-require 'thread'
-
+require "socket"
 # A wrapper for loggers to enrich the log message with structured data (a Hash).
 # All methods besides debug/info/warn/error/fatal are forwarded to the target by the means of method_missing.
 class EventHub::Components::StructuredDataLogger
@@ -23,8 +21,8 @@ class EventHub::Components::StructuredDataLogger
   def initialize(target, options)
     @target = target
     @options = options
-    @options['pid'] ||= ::Process.pid
-    @options['hostname'] ||= ::Socket.gethostname
+    @options["pid"] ||= ::Process.pid
+    @options["hostname"] ||= ::Socket.gethostname
     verify_options!
   end
 
@@ -55,20 +53,23 @@ class EventHub::Components::StructuredDataLogger
     target.send(method, *args, &block)
   end
 
+  def respond_to_missing?(method)
+    true
+  end
+
   def build_message(severity, message, structured_data)
     options.merge({
-      'severity' => severity,
-      'data' => structured_data,
-      'message' => message
+      "severity" => severity,
+      "data" => structured_data,
+      "message" => message
     })
   end
 
   def verify_options!
-    raise ::ArgumentError.new('target must not be nil') if target.nil?
-    raise ::ArgumentError.new('data is a reserved key') if options.has_key?('data')
-    raise ::ArgumentError.new('message is a reserved key') if options.has_key?('message')
-    raise ::ArgumentError.new('app_name is required') if !options['app_name']
-    raise ::ArgumentError.new('env is required') if !options['env']
+    raise ::ArgumentError.new("target must not be nil") if target.nil?
+    raise ::ArgumentError.new("data is a reserved key") if options.has_key?("data")
+    raise ::ArgumentError.new("message is a reserved key") if options.has_key?("message")
+    raise ::ArgumentError.new("app_name is required") if !options["app_name"]
+    raise ::ArgumentError.new("env is required") if !options["env"]
   end
-
 end
