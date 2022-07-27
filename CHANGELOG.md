@@ -1,3 +1,7 @@
+## 0.3.1 / 2022-07-27
+
+* Update homepage url in gemspec file
+
 ## 0.3.0 / 2022-07-27
 
 * Add dependabot
