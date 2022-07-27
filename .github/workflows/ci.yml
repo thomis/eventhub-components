@@ -48,4 +48,5 @@ jobs:
 
     - name: Code Climate publish test coverage
       run: |
+        export CC_TEST_REPORTER_ID=${{ secrets.CC_TEST_REPORTER_ID }}
         ./cc-test-reporter after-build
