@@ -21,6 +21,8 @@ Or install it yourself as:
 
     $ gem install eventhub-components
 
+Currently supported and tested ruby versions are: 2.6, 2.7, 3.0 and 3.1
+
 ## Usage
 
     require 'eventhub/components'
