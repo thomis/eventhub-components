@@ -7,7 +7,7 @@
 
 Incldues logging, exception writing and pid file facilities for event hub processors.
 
-## Supported Ruby Version's
+## Supported Ruby Versions
 
 Currently supported and tested ruby versions are:
 
