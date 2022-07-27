@@ -18,6 +18,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
     strategy:
       fail-fast: false
       matrix:
@@ -39,7 +41,6 @@ jobs:
       run: |
         curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         chmod +x ./cc-test-reporter
-        export CC_TEST_REPORTER_ID=${{ secrets.CC_TEST_REPORTER_ID }}
         ./cc-test-reporter before-build
 
     - name: Run default task
@@ -48,5 +49,5 @@ jobs:
 
     - name: Code Climate publish test coverage
       run: |
-        export CC_TEST_REPORTER_ID=${{ secrets.CC_TEST_REPORTER_ID }}
+        set
         ./cc-test-reporter after-build
