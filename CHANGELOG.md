@@ -2,7 +2,9 @@
 
 * Add dependabot
 * Add to GitHub actions
+* Remove travis
 * Add Ruby style guide and linter
+* Update badge links in readme
 
 ## 0.2.2 / 2018-02-27
 
