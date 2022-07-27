@@ -1,25 +1,25 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'eventhub/components/version'
+require "eventhub/components/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'eventhub-components'
-  spec.version       = EventHub::Components::VERSION
-  spec.authors       = ['Steiner, Thomas']
-  spec.email         = ['thomas.steiner@ikey.ch']
-  spec.summary       = 'Additional eventhub components'
-  spec.description   = 'Additional eventhub components'
-  spec.homepage      = ''
-  spec.license       = 'MIT'
+  spec.name = "eventhub-components"
+  spec.version = EventHub::Components::VERSION
+  spec.authors = ["Steiner, Thomas"]
+  spec.email = ["thomas.steiner@ikey.ch"]
+  spec.summary = "Additional eventhub components"
+  spec.description = "Additional eventhub components"
+  spec.homepage = ""
+  spec.license = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ['lib']
+  spec.files = `git ls-files -z`.split("\x0")
+  spec.executables = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'bundler', '~> 2.1'
-  spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rspec', '~> 3.9.0'
-  spec.add_runtime_dependency 'logstash-logger', '~> 0.26'
+  spec.add_development_dependency "bundler", "~> 2.1"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.11"
+  spec.add_development_dependency "standard", "~> 1.14"
+
+  spec.add_runtime_dependency "logstash-logger", "~> 0.26"
 end
