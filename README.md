@@ -1,5 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/eventhub-components.svg)](https://badge.fury.io/rb/eventhub-components)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3f6c9e1a8d32388df0fa/maintainability)](https://codeclimate.com/github/thomis/eventhub-components/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3f6c9e1a8d32388df0fa/test_coverage)](https://codeclimate.com/github/thomis/eventhub-components/test_coverage)
 [![ci](https://github.com/thomis/eventhub-components/actions/workflows/ci.yml/badge.svg)](https://github.com/thomis/eventhub-components/actions/workflows/ci.yml)
 
 # EventHub::Components
