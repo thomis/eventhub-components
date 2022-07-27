@@ -1,8 +1,7 @@
-require_relative '../spec_helper'
+require_relative "../spec_helper"
 
 RSpec.describe EventHub::Components::StructuredDataLogger do
-  context 'logger' do
-
+  context "logger" do
     before(:each) do
       remove_all_exception_files
     end
@@ -12,28 +11,28 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
     end
 
     let(:writer) {
-      EventHub::Components::ExceptionWriter.new('tmp', 5)
+      EventHub::Components::ExceptionWriter.new("tmp", 5)
     }
 
-    it 'writes an exception' do
+    it "writes an exception" do
       begin
         raise
       rescue => e
-        name = writer.write(e)
+        writer.write(e)
       end
-      expect(Dir['tmp/exceptions/*'].size).to eq(1)
+      expect(Dir["tmp/exceptions/*"].size).to eq(1)
     end
 
-    it 'writes an exception and a message' do
+    it "writes an exception and a message" do
       begin
         raise
       rescue => e
-        name = writer.write(e, "hi")
+        writer.write(e, "hi")
       end
-      expect(Dir['tmp/exceptions/*'].size).to eq(2)
+      expect(Dir["tmp/exceptions/*"].size).to eq(2)
     end
 
-    it 'limits number of files' do
+    it "limits number of files" do
       begin
         raise
       rescue => e
@@ -41,13 +40,12 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
           writer.write(e)
         end
       end
-      expect(Dir['tmp/exceptions/*'].size).to eq(5)
+      expect(Dir["tmp/exceptions/*"].size).to eq(5)
     end
-
   end
 
   def remove_all_exception_files
-    Dir['tmp/exceptions/*'].each do |file|
+    Dir["tmp/exceptions/*"].each do |file|
       File.delete(file)
     end
   end

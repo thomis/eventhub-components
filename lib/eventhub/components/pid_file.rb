@@ -13,19 +13,15 @@ class EventHub::Components::Pidfile
 
   # Try to delete file, ignore all errors
   def delete
-    begin
-      File.delete(file_name)
-    rescue
-      # ignore
-    end
+    File.delete(file_name)
+  rescue
+    # ignore
   end
 
   # Read the PID from the file
   def read
-    begin
-      File.read(file_name)
-    rescue Errno::ENOENT => e
-      # ignore, will return nil
-    end
+    File.read(file_name)
+  rescue Errno::ENOENT
+    # ignore, will return nil
   end
 end
