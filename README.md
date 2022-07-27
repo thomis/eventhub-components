@@ -7,6 +7,15 @@
 
 Incldues logging, exception writing and pid file facilities for event hub processors.
 
+## Supported Ruby Version's
+
+Currently supported and tested ruby versions are:
+
+- 3.1
+- 3.0
+- 2.7
+- 2.6
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,8 +29,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install eventhub-components
-
-Currently supported and tested ruby versions are: 2.6, 2.7, 3.0 and 3.1
 
 ## Usage
 
