@@ -7,6 +7,15 @@
 
 Incldues logging, exception writing and pid file facilities for event hub processors.
 
+## Supported Ruby Versions
+
+Currently supported and tested ruby versions are:
+
+- 3.1
+- 3.0
+- 2.7
+- 2.6
+
 ## Installation
 
 Add this line to your application's Gemfile:
