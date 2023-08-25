@@ -49,8 +49,8 @@ class EventHub::Components::StructuredDataLogger
 
   private
 
-  def method_missing(method, *args, &block)
-    target.send(method, *args, &block)
+  def method_missing(method, *, &block)
+    target.send(method, *, &block)
   end
 
   def respond_to_missing?(method)
