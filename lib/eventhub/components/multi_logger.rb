@@ -22,7 +22,7 @@ class EventHub::Components::MultiLogger
     end
   end
 
-  def respond_to_missing?(method)
+  def respond_to_missing?(*args)
     true
   end
 end

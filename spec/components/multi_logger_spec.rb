@@ -56,5 +56,9 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
       logger.info("Yes, it works2!")
       expect(File.read("logs/ruby/processor.log")).to match(/Yes, it works2!/)
     end
+
+    it "response to an unknown method" do
+      expect(logger.respond_to?(:whatever)).to eq(true)
+    end
   end
 end

@@ -86,4 +86,15 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
       expect(logger[:fatal]).to eq(expectation)
     end
   end
+
+  context "unknown methods" do
+    let(:logger) { EventHub::Components::StructuredDataLogger.new("something not nil", "app_name" => "an app", "env" => "test") }
+    it "response to an unknown method" do
+      expect(logger.respond_to?(:whatever)).to eq(true)
+    end
+
+    it "can call an unknown method" do
+      expect { logger.size }.not_to raise_error
+    end
+  end
 end

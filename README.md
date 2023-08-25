@@ -11,10 +11,11 @@ Incldues logging, exception writing and pid file facilities for event hub proces
 
 Currently supported and tested ruby versions are:
 
+- 3.2
 - 3.1
 - 3.0
-- 2.7
-- 2.6
+- 2.7 (EOL March 31 2023, is not part of CI anymore)
+- 2.6 (EOL March 31 2022, is not part of CI anymore)
 
 ## Installation
 
