@@ -62,7 +62,7 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
     end
 
     it "logs json to standard output" do
-      pattern = /\{"time":"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}\+\d{2}:\d{2}","msg":"hello","level":"(INFO|WARN|ERROR|DEBUG|FATAL)","host":"[^\"]+","app":"processor","env":"development"\}/
+      pattern = /\{"time":"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}\+\d{2}:\d{2}","msg":"hello","level":"(INFO|WARN|ERROR|DEBUG|FATAL)","host":"[^\"]+","app":"processor","env":"development"\}/
 
       logger.add_device(EventHub::Components::Logger.logstash_cloud("processor", "development"))
       expect { logger.info("hello") }.to output(pattern).to_stdout_from_any_process

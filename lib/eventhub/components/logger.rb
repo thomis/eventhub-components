@@ -24,11 +24,14 @@ class EventHub::Components::Logger
     LogStashLogger.configure do |config|
       config.customize_event do |event|
         # renaming default fields to be eventhub cloud compatible
-        event["time"] = event.remove("@timestamp")
+        event["time"] = event.timestamp.iso8601(6)
         event["msg"] = event.remove("message")
         event["level"] = event.remove("severity")
-        event["host"] = event.remove("host") # reordering
-        event.remove("@version") # not needed
+        event["host"] = event.remove("host") # for reordering
+
+        # to be removed or replaced
+        event.remove("@version")
+        event.remove("@timestamp")
 
         # additional fields
         event["app"] = processor_name
