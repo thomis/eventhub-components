@@ -60,5 +60,16 @@ RSpec.describe EventHub::Components::StructuredDataLogger do
     it "response to an unknown method" do
       expect(logger.respond_to?(:whatever)).to eq(true)
     end
+
+    it "logs json to standard output" do
+      pattern = /\{"time":"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}\+\d{2}:\d{2}","msg":"hello","level":"(INFO|WARN|ERROR|DEBUG|FATAL)","host":"[^\"]+","app":"processor","env":"development"\}/
+
+      logger.add_device(EventHub::Components::Logger.logstash_cloud("processor", "development"))
+      expect { logger.info("hello") }.to output(pattern).to_stdout_from_any_process
+      expect { logger.warn("hello") }.to output(pattern).to_stdout_from_any_process
+      expect { logger.error("hello") }.to output(pattern).to_stdout_from_any_process
+      expect { logger.debug("hello") }.to output(pattern).to_stdout_from_any_process
+      expect { logger.fatal("hello") }.to output(pattern).to_stdout_from_any_process
+    end
   end
 end

@@ -17,9 +17,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 2.1"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.12"
-  spec.add_development_dependency "standard", "~> 1.23"
+  spec.add_development_dependency "rake", "~> 13.2"
+  spec.add_development_dependency "rspec", "~> 3.13"
+  spec.add_development_dependency "standard", "~> 1.39"
   spec.add_development_dependency "simplecov", "~> 0.21"
 
   spec.add_runtime_dependency "logstash-logger", "~> 0.26"

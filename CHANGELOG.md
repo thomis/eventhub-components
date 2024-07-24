@@ -1,3 +1,8 @@
+## 0.4.0 / 2024-07-24
+
+* Customized cloud stdout logstash logger
+* Update development dependencies (rake, rspec, standard)
+
 ## 0.3.1 / 2022-07-27
 
 * Update homepage url in gemspec file

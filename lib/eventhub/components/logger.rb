@@ -18,4 +18,23 @@ class EventHub::Components::Logger
     end
     LogStashLogger.new([{type: :file, path: "logs/ruby/#{processor_name}.log", sync: true}])
   end
+
+  def self.logstash_cloud(processor_name, environment)
+    # configure logstash with custom fields
+    LogStashLogger.configure do |config|
+      config.customize_event do |event|
+        # renaming default fields to be eventhub cloud compatible
+        event["time"] = event.remove("@timestamp")
+        event["msg"] = event.remove("message")
+        event["level"] = event.remove("severity")
+        event["host"] = event.remove("host") # reordering
+        event.remove("@version") # not needed
+
+        # additional fields
+        event["app"] = processor_name
+        event["env"] = environment
+      end
+    end
+    LogStashLogger.new([{type: :stdout}])
+  end
 end
