@@ -1,3 +1,7 @@
+## 0.4.2 / 2024-09-03
+
+* Add logger to dependencies in order to prepare for future ruby versions
+
 ## 0.4.1 / 2024-07-24
 
 * Have higher resolution timestamps in json output. 6 digits of fractional second. Exp {"time":"2024-07-24T14:02:47.102394+02:00"}
