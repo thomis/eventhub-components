@@ -1,5 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/eventhub-components.svg)](https://badge.fury.io/rb/eventhub-components)
-[![ci](https://github.com/thomis/eventhub-components/actions/workflows/ci.yml/badge.svg)](https://github.com/thomis/eventhub-components/actions/workflows/ci.yml)
+[![01 - Test](https://github.com/thomis/eventhub-components/actions/workflows/01_test.yml/badge.svg)](https://github.com/thomis/eventhub-components/actions/workflows/01_test.yml)
+[![02 - Release](https://github.com/thomis/eventhub-components/actions/workflows/02_release.yml/badge.svg)](https://github.com/thomis/eventhub-components/actions/workflows/02_release.yml)
 
 # EventHub::Components
 
