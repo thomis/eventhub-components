@@ -79,6 +79,11 @@ Helps writing exceptions and log messages to files. It creates
 
     writer.write(e)
 
+## Publishing
+
+This project uses [Trusted Publishing](https://guides.rubygems.org/trusted-publishing/) to securely publish gems to RubyGems.org. Trusted Publishing eliminates the need for long-lived API tokens by using OpenID Connect (OIDC) to establish a trusted relationship between GitHub Actions and RubyGems.org.
+
+With Trusted Publishing configured, gem releases are automatically published to RubyGems when the release workflow runs, providing a more secure and streamlined publishing process.
 
 ## Contributing
 

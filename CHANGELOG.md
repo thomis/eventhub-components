@@ -1,3 +1,7 @@
+# 0.4.3 / 2025-11-09
+
+* Added Trusted Publisher
+
 ## 0.4.2 / 2024-09-03
 
 * Add logger to dependencies in order to prepare for future ruby versions
