@@ -1,3 +1,8 @@
+
+# 0.4.4 / 2025-12-10
+
+* Prepare for ruby 4.0 and bundler 4.0
+
 # 0.4.3 / 2025-11-09
 
 * Added Trusted Publisher
