@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "standard", "~> 1.39"
   spec.add_development_dependency "simplecov", "~> 0.21"
 
-  spec.add_runtime_dependency "logstash-logger", "~> 0.26"
+  spec.add_runtime_dependency "logstash-logger", ">= 0.26", "< 2.0"
   spec.add_runtime_dependency "logger", "~> 1.6"
 end
