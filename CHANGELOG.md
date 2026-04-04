@@ -1,4 +1,10 @@
 
+# 0.5.0 / 2026-04-04
+
+* Update logstash-logger to 1.0.0
+* Adapt to new constructor API (single options hash)
+* Handle host field change for Elastic >= 8 compatibility
+
 # 0.4.4 / 2025-12-10
 
 * Prepare for ruby 4.0 and bundler 4.0

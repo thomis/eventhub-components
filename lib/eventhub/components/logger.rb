@@ -16,7 +16,7 @@ class EventHub::Components::Logger
         event["env"] = environment
       end
     end
-    LogStashLogger.new([{type: :file, path: "logs/ruby/#{processor_name}.log", sync: true}])
+    LogStashLogger.new(type: :file, path: "logs/ruby/#{processor_name}.log", sync: true)
   end
 
   def self.logstash_cloud(processor_name, environment)
@@ -27,7 +27,8 @@ class EventHub::Components::Logger
         event["time"] = event.timestamp.iso8601(6)
         event["msg"] = event.remove("message")
         event["level"] = event.remove("severity")
-        event["host"] = event.remove("host") # for reordering
+        host = event.remove("host")
+        event["host"] = host.is_a?(Hash) ? host["hostname"] : host
 
         # to be removed or replaced
         event.remove("@version")
@@ -38,6 +39,6 @@ class EventHub::Components::Logger
         event["env"] = environment
       end
     end
-    LogStashLogger.new([{type: :stdout}])
+    LogStashLogger.new(type: :stdout)
   end
 end
